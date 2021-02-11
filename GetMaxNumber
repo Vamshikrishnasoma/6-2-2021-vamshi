@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace luckynumber
+{
+    class maxdigitarray
+    {
+        public static int GetMaxNumber(int []arr)
+        {
+            return ArrayToNum(SortArrayDesc(GetMaxDigitarray(arr)));
+        }
+        public static int ArrayToNum(int []arr)
+        {
+            int res = 0;
+            for (int i=0;i<arr.Length;i++)
+            {
+                res = res * 10 + arr[i];
+                
+            }
+            return res;
+        }
+        public static int[] SortArrayDesc(int []arr)
+        {
+            for(int i=0;i<arr.Length;i++)
+            {
+                for(int j=i+1;j<arr.Length;j++)
+                {
+                    if(arr[i]<arr[j])
+                    {
+                        int copy = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = copy;
+                    }
+                }
+            }
+            return arr;
+        }
+        public static int[] GetMaxDigitarray(int []arr)
+        {
+            int[] mxdigitarray = new int[arr.Length];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                mxdigitarray[i] = GetMaxDigit(arr[i]);
+            }
+            return mxdigitarray;
+        }
+        public static int GetMaxDigit(int num)
+        {
+            int max = num % 10;
+            while(num>0)
+            {
+                int digit = num % 10;
+                if(digit>max)
+                {
+                    max = digit;
+                }
+                num /= 10;
+            }
+
+            return max;
+        }
+        static void Main(string[] args)
+        {
+            int[] arr = { 345, 3466, 3974, 836, 542, 2742, 2629 };
+            Console.WriteLine(GetMaxNumber(arr));
+        }
+    }
+}
