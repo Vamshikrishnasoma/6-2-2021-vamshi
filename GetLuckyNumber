@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace luckynumber
+{
+    class Program
+    {
+        public static int GetLuckyNumber(string dob)
+        {
+            string[] res = dob.Split('-');
+            int date = int.Parse(res[0]);
+            int mon = GetMonToNum(res[1]);
+            int year = int.Parse(res[2]);
+            int sum = date + mon + year;
+            if (sum > 9)
+            {
+                sum=GetSumMethod(sum);
+            }
+            return sum;
+        }
+        public static int GetMonToNum(string month)
+        {
+            month = month.ToLower();
+            string[] months = { "jan", "feb", "Mar", "apl", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec" };
+            for(int i=0;i<months.Length;i++)
+            {
+                if(month.Contains(months[i]))
+                {
+                    return i + 1;
+                }
+            }
+            return 0;
+        }
+        public static int GetSumMethod(int num)
+        {
+            int sum = 0;
+            while(num>0)
+            {
+                int digit = num % 10;
+                sum = sum + digit;
+                num /= 10;
+            }
+            return sum;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine(GetLuckyNumber("26-june-1995"));
+            Console.WriteLine(GetMonToNum("jun"));
+            Console.WriteLine(GetSumMethod(142));
+        }
+    }
+}
