@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace luckynumber
+{
+    class sumofdigits
+    {
+        static void Main(string[] args)
+        {
+            int sum = 0;
+            int num = 834837;
+            while(num>0)
+            {
+                int digit = num % 10;
+                sum = sum + digit;
+                num /= 10;
+            }
+            Console.WriteLine($"Sum of digits is:{sum}");
+        }
+    }
+}
