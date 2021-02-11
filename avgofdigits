@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace luckynumber
+{
+    class Averagenumbers
+    {
+        static void Main(string[] args)
+        {
+            int num = 7464;
+            int count = 0;
+            int sum = 0;
+            int avg = 0;
+            while(num>0)
+            {
+                int digit=num % 10;
+                sum = sum + digit;
+                count++;
+                num /= 10;
+            }
+            avg = sum / count;
+            Console.WriteLine($"average of number is:{avg}");
+        }
+    }
+}
