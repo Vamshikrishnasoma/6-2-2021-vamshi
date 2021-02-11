@@ -15,7 +15,7 @@ namespace luckynumber
             int mon = GetMonToNum(res[1]);
             int year = int.Parse(res[2]);
             int sum = date + mon + year;
-            if (sum > 9)
+            while (sum > 9)
             {
                 sum=GetSumMethod(sum);
             }
