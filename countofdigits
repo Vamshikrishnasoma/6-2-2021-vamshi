@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace luckynumber
+{
+    class countofdigits
+    {
+        static void Main(string[] args)
+        {
+            int count = 0;
+            int num = 8746;
+            while(num>0)
+            {
+                int digit = num % 10;
+                count++;
+                num /= 10;
+            }
+            Console.WriteLine($"Count of digits is:{count}");
+        }
+    }
+}
