@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace luckynumber
+{
+    class seperatedigits
+    {
+        static void Main(string[] args)
+        {
+            int num = 173554;
+            while(num>0)
+            {
+                int digit = num % 10;
+                Console.WriteLine(digit);
+                num /= 10;
+            }
+        }
+    }
+}
