@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Isamstrong
+{
+    class Program
+    {
+        public static bool IsAmstrongnumber(int num)
+        {
+            int count = 0;
+            int copy = num;
+            int sum = 0;
+            
+            while (num != 0)
+            {
+                int digit = num % 10;
+                count++;
+                num /= 10;
+            }
+            num=copy;
+            while (num != 0)
+            {
+                int powval = 1;
+                int digit = num % 10;
+                for (int i = 1; i <= count; i++)
+                {
+                    powval = powval * digit;
+                }
+                num /= 10;
+                sum = sum + powval;
+            }
+            return sum == copy;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine(IsAmstrongnumber(163));
+        }
+    }
+}
