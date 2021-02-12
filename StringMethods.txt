@@ -1,0 +1,31 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace methods
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String str = "overloading";
+            Console.WriteLine(str.ElementAt(6));
+            Console.WriteLine(str.IndexOf("l"));
+            Console.WriteLine(str.Substring(0,str.Length));
+            Console.WriteLine(str.Contains("di"));
+            Console.WriteLine(str.Substring(1,str.Length-1));
+            Console.WriteLine(str.Substring(2));
+            Console.WriteLine(str.Substring(4));
+            string dob = "29-12-1998";
+            string[] res = dob.Split('-');
+            Console.WriteLine(res[0]);
+            Console.WriteLine(res[1]);
+            Console.WriteLine(res[2]);
+            Console.WriteLine("vamshi".CompareTo("krishna"));
+            Console.WriteLine(str.Equals("loading"));
+        }
+    }
+}
