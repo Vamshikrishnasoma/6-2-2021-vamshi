@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AmstrongNumber
+{
+    class AmstrongNumber
+    {
+        static void Main(string[] args)
+        {
+            int num = 1634;
+            int copy = num;
+            int count = 0;
+            int sum = 0;
+            while (num != 0)
+            {
+                int digit = num % 10;
+                count++;
+                num = num / 10;
+            }
+            Console.WriteLine(count);
+            num = copy;
+            while (num != 0)
+            {
+                int digit = num % 10;
+                int powval = 1;
+                for (int i = 1; i <= count; i++)
+                {
+                    powval = powval * digit;
+                }
+
+                sum = sum + powval;
+                num = num / 10;
+            }
+            if (sum == copy)
+            {
+                Console.WriteLine($"Amstrong Number:{sum}");
+            }
+            else
+            {
+                Console.WriteLine($"Not a Amstrong Number:{sum}");
+            }
+        }
+    }
+}
