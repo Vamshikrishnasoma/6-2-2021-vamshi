@@ -1,0 +1,40 @@
+using System;
+					
+public class Program
+{
+	public string getNumbersInRange(int num1,int num2)
+	{
+		if(num1==0 || num2==0)
+		{
+		return "-1";
+		}
+		if(num1==num2)
+		{
+			return "-2";
+		}
+		if(num1<num2)
+		{
+			return "-3";
+		}
+		if(num1-num2==1)
+		{
+			return "-4";
+		}
+		if(num1>num2)
+		{
+		for(int i=num1-1;i>num2;i--)
+		{
+			string s=string.Empty;
+			string result=Convert.ToString(i);
+			Console.Write(result+" ");
+		}
+		}
+		return null;
+	}
+	public static void Main()
+	{
+		Program p=new Program();
+		Console.WriteLine(p.getNumbersInRange(7,5));
+		
+	}
+}
