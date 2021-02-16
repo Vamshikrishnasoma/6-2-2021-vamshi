@@ -4,6 +4,10 @@ public class Program
 {
 	public string EvenOrOdd(int num)
 	{
+		if(num==0 || num<0)
+		{
+			return "Invalid Input";
+		}
 		if(num%2==0)
 		{
 		return "even";
@@ -11,10 +15,6 @@ public class Program
 		if(num%2!=0)
 		{
 			return "odd";
-		}
-		if(num==0 || num<0)
-		{
-			return "Invalid Input";
 		}
 		return " ";
 	}
