@@ -1,0 +1,26 @@
+using System;
+					
+public class Program
+{
+	public string EvenOrOdd(int num)
+	{
+		if(num%2==0)
+		{
+		return "even";
+		}
+		if(num%2!=0)
+		{
+			return "odd";
+		}
+		if(num==0 || num<0)
+		{
+			return "Invalid Input";
+		}
+		return " ";
+	}
+	public static void Main()
+	{
+		Program p=new Program();
+		Console.WriteLine(p.EvenOrOdd(8));
+	}
+}
