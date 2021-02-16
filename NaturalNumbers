@@ -1,0 +1,33 @@
+using System;
+					
+public class Program
+{
+	public string getNaturalNumbers(int num1,int num2)
+	{
+		if(num1==0 || num2==0)
+		{
+		return "-2";
+		}
+		if(num1<0||num2<0)
+		{
+			return "-1";
+		}
+			Satisfied:
+			Console.Write(num1+" ");
+				num1++;
+		string s=string.Empty;
+		string result=Convert.ToString(num1);
+		if(num1<num2)
+		{
+		 goto Satisfied;
+		}
+		return null;
+	}
+	public static void Main()
+	{
+		
+		Program p=new Program();
+		Console.WriteLine(p.getNaturalNumbers(1,9));
+		
+	}
+}
