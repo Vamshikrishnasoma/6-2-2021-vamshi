@@ -1,0 +1,20 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int num=3421;
+		int max=num%10;
+		while(num!=0)
+		{
+			int digit=num%10;
+			if(digit>max)
+			{
+				max=digit;
+			}
+			num/=10;
+		}
+		Console.WriteLine(max);
+	}
+}
